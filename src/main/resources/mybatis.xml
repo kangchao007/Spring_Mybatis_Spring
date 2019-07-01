@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <typeAlias type="com.kgc.util.Params" alias="Params"></typeAlias>
+        <package name="com.kgc.entity"></package>
+    </typeAliases>
+
+    <!--分页-->
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <property name="reasonable" value="true"></property>
+            <property name="helperDialect" value="mysql"></property>
+        </plugin>
+    </plugins>
+
+<mappers>
+    <mapper resource="com/kgc/mapper/EmpMapper.xml"></mapper>
+    <mapper resource="com/kgc/mapper/UserMapper.xml"></mapper>
+</mappers>
+
+</configuration>
